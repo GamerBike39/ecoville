@@ -15,25 +15,25 @@ export const ecovilleProjectData = {
       title: "Efficacité Énergétique",
       description:
         "Grâce à sa structure hexagonale, Écoville maximise l'utilisation de l'espace et l'efficacité énergétique, réduisant significativement notre empreinte carbone.",
-      image: "/project/eff.png",
+      image: "/project/eff.webp",
     },
     {
       title: "Biodiversité Intégrée",
       description:
         "Chaque cellule hexagonale abrite des espaces verts, favorisant la biodiversité au cœur même de la vie urbaine.",
-      image: "/project/diversite.png",
+      image: "/project/diversite.webp",
     },
     {
       title: "Mobilité Durable",
       description:
         "Un réseau de transport innovant, calqué sur les voies de communication des abeilles, privilégie les déplacements doux et les transports en commun écologiques.",
-      image: "/project/transport.png",
+      image: "/project/transport.webp",
     },
     {
       title: "Économie Circulaire",
       description:
         "À l'image d'une ruche, Écoville fonctionne sur un modèle d'économie circulaire, où chaque ressource est optimisée et réutilisée.",
-      image: "/project/circu.png",
+      image: "/project/circu.webp",
     },
   ],
 
@@ -44,25 +44,25 @@ export const ecovilleProjectData = {
         title: "Vivre en Harmonie",
         description:
           "Expérimentez une vie en parfait équilibre entre confort moderne et respect de l'environnement.",
-        image: "/project/harmony.png",
+        image: "/project/harmony.webp",
       },
       {
         title: "Innover",
         description:
           "Rejoignez une communauté de pionniers, façonnant ensemble les solutions urbaines de demain.",
-        image: "/project/innov.png",
+        image: "/project/innov.webp",
       },
       {
         title: "S'épanouir",
         description:
           "Profitez d'un cadre de vie conçu pour le bien-être, alliant nature, technologie et lien social.",
-        image: "/project/epanoui.png",
+        image: "/project/epanoui.webp",
       },
       //   {
       //     title: "Communauté Collaborative",
       //     description:
       //       "La structure hexagonale favorise naturellement les interactions sociales et la collaboration entre les habitants.",
-      //     image: "/project/commu.png",
+      //     image: "/project/commu.webp",
       //   },
     ],
   },
