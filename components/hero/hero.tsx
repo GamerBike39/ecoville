@@ -1,112 +1,108 @@
 "use client";
-import React from "react";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import React, { useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
 
-type ColorType = "green" | "red" | "yellow" | "blue" | "purple" | "indigo";
+const Hero = () => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const heroTitle = useRef<HTMLDivElement>(null);
 
-interface HexagonButtonProps {
-  text: string;
-  color: ColorType;
-  href?: string;
-  intern?: boolean;
-}
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: wrapperRef.current,
+          start: "top top",
+          end: "+=100%",
+          pin: true,
+          scrub: 1,
+        },
+      });
 
-const HexagonButton: React.FC<HexagonButtonProps> = ({
-  text,
-  color,
-  href,
-  intern,
-}) => (
-  <div
-    onClick={() => {
-      gsap.to(window, { duration: 1, scrollTo: href });
-    }}
-    className={cn(
-      "relative hexagon transition-all duration-500 hover:scale-105 w-fit cursor-pointer",
-      {
-        "before:bg-green-400/80 hover:before:bg-green-500": color === "green",
-        "before:bg-red-400/80 hover:before:bg-red-500": color === "red",
-        "before:bg-yellow-400/80 hover:before:bg-yellow-500":
-          color === "yellow",
-        "before:bg-blue-400/80 hover:before:bg-blue-500": color === "blue",
-        "before:bg-purple-400/80 hover:before:bg-purple-500":
-          color === "purple",
-        "before:bg-indigo-400/80 hover:before:bg-indigo-500":
-          color === "indigo",
-      }
-    )}
-  >
-    {/* {intern && ( */}
-    <div className="text-fluid-base font-bold text-white h-full relative z-10 cursor-pointer">
-      {text}
-    </div>
-    {/* )} */}
-  </div>
-);
+      tl.to([imageRef.current, textContainerRef.current], {
+        scale: 2.5,
+        opacity: 0,
+        z: 350,
+        transformOrigin: "center center",
+        ease: "power1.inOut",
+      }).to(
+        heroRef.current,
+        {
+          filter: "brightness(1)",
+          transformOrigin: "center center",
+          ease: "power1.inOut",
+        },
+        "<"
+      );
 
-interface HexagonRowProps {
-  items: HexagonButtonProps[];
-}
+      tl.fromTo(
+        heroTitle.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+        }
+      );
+    }, wrapperRef);
 
-const HexagonRow: React.FC<HexagonRowProps> = ({ items }) => (
-  <div className="flex gap-8 lg:gap-20">
-    {items.map((item, index) => (
-      <HexagonButton key={index} {...item} />
-    ))}
-  </div>
-);
+    return () => ctx.revert();
+  }, []);
 
-const menuItems: HexagonButtonProps[][] = [
-  [
-    { text: "Le projet", color: "blue", href: "#project" },
-    { text: "Loisirs", color: "green" },
-    { text: "Industrie", color: "yellow" },
-  ],
-  [
-    { text: "Habitats", color: "red" },
-    { text: "Énergie", color: "purple" },
-    { text: "Activités", color: "indigo" },
-  ],
-];
-
-interface HeroProps {
-  title: string;
-  subtitle: string;
-  tagline: string;
-}
-
-const Hero: React.FC<HeroProps> = ({ title, subtitle, tagline }) => {
   return (
-    <section className="relative min-h-svh hero bg-hero bg-no-repeat bg-cover bg-scroll">
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-background via-background/30 to-transparent" />
-      <div className="min-h-[150svh] container max-xl:max-w-4xl max-w-7xl">
-        <div className="container sticky top-1/2 -translate-y-1/2 pb-20">
-          <div className="w-full flex max-lg:flex-col lg:gap-32 gap-48">
-            <div className="bigHexagon before:bg-white/80 relative grid place-content-center">
-              <h1 className="text-fluid-4xl mx-auto first-letter:uppercase">
-                {title}
-              </h1>
-              <div>
-                <p className="text-fluid-base font-bold px-5 text-center text-green-950 mx-auto text-balance max-w-sm">
-                  {subtitle}
-                </p>
-                <p className="text-fluid-base font-extrabold px-5 text-center text-green-950 mx-auto text-balance max-w-sm">
-                  {tagline}
-                </p>
-              </div>
+    <div
+      ref={wrapperRef}
+      className="wrapper relative w-full  min-h-[150svh] h-svh"
+    >
+      <div className="content  w-full min-h-[150svh]">
+        <section
+          ref={heroRef}
+          className="section relative flex flex-col items-center justify-center hero bg-hero brightness-50   min-h-[150svh] bg-no-repeat bg-scroll bg-cover"
+        >
+          <div className="absolute left-0 bottom-0 w-full h-1/3 bg-gradient-to-t from-background via-background/30 to-transparent" />
+          <div ref={heroTitle} className="opacity-0 space-y-20">
+            <h1 className="first-letter:uppercase text-6xl lg:text-8xl xl:text-[10vw] font-extrabold text-shadow text-white">
+              écoville
+            </h1>
+            <div className=" w-full flex items-center justify-center gap-20 "></div>
+          </div>
+        </section>
+      </div>
+      <div className="image-container perspective absolute inset-0 w-full h-svh overflow-hidden">
+        <Image
+          ref={imageRef}
+          src="/bg/firstBg.webp"
+          alt="image"
+          className="object-cover min-h-svh w-screen"
+          width={1920}
+          height={1080}
+        />
+        <div
+          ref={textContainerRef}
+          className="absolute inset-0 left-0 text-white flex flex-col justify-center "
+        >
+          <div className="container">
+            <div className="text-xl lg:text-fluid-4xl 2xl:text-8xl leading-none">
+              Nous
             </div>
-            <div className="space-y-14 lg:space-y-28 w-fit">
-              <HexagonRow items={menuItems[0]} />
-              <div className="translate-x-14 lg:translate-x-16 w-fit">
-                <HexagonRow items={menuItems[1]} />
-              </div>
+            <div className="text-2xl lg:text-fluid-4xl 2xl:text-8xl leading-none font-extrabold">
+              construisons
             </div>
+            <div className="text-[8vw] leading-none font-extrabold ">
+              Aujourd&apos;hui
+            </div>
+          </div>
+          <div className="translate-y-10 pr-20 text-fluid-4xl xl:text-[8vw]  leading-none font-extrabold flex justify-end">
+            <div>Le Futur</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

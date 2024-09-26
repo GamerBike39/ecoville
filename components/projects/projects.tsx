@@ -5,7 +5,7 @@ export const Project = () => {
   return (
     <section
       id={"project"}
-      className="min-h-svh flex max-lg:flex-col w-full py-20"
+      className="min-h-svh flex max-lg:flex-col w-full py-20 "
     >
       <FirstCol />
       <SecondCol />

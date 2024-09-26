@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, random } from "gsap";
+import { gsap } from "gsap";
 import Image from "next/image";
 
 export const ProjectCard = ({
@@ -100,7 +100,9 @@ export const ProjectCard = ({
             animate ? "" : isOpen ? "h-auto" : "h-0"
           }`}
         >
-          <p className="text-base text-slate-300 pt-2">{description}</p>
+          <p className="text-base text-slate-300 pt-2 max-w-lg">
+            {description}
+          </p>
         </div>
       </div>
     </div>
