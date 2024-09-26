@@ -14,7 +14,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 6 90% 96%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -77,83 +77,6 @@ body {
   }
 }
 
-.hexagon_outline::before {
-  content: '';
-  position: absolute;
-
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50% ;
-  --b: 10px; /* adjust to control the border  */
-  height: 200px;
-  aspect-ratio: cos(30deg);
-  clip-path: 
-    polygon(50% 0,-50% 50%,50% 100%,150% 50%,50% 0,
-    50% var(--b),
-    calc(100% - var(--b)*sin(60deg)) calc(25% + var(--b)*cos(60deg)),
-    calc(100% - var(--b)*sin(60deg)) calc(75% - var(--b)*cos(60deg)),
-    50% calc(100% - var(--b)),
-    calc(var(--b)*sin(60deg)) calc(75% - var(--b)*cos(60deg)),
-    calc(var(--b)*sin(60deg)) calc(25% + var(--b)*cos(60deg)),
-    50% var(--b));
-}
-.hexagon::before {
-  content: '';
-  position: absolute;
-  /* z-index: -1; */
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50% ;
-  height: 150px;
-  aspect-ratio: cos(30deg);
-    clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
-    backdrop-filter: blur(3px);
-    transition : all 0.3s;
-}
-
-.bigHexagon::before{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50% ;
-    --b: 10px; /* adjust to control the border  */
-    height: 400px;
-    aspect-ratio: cos(30deg);
-    clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
-    backdrop-filter: blur(3px);
-}
-.bigHexagonLeft{
-    height: 400px;
-    aspect-ratio: cos(30deg);
-    clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
-}
-
-@media screen and (max-width: 1120px) {
-  .hexagon_outline::before {
-    height: 100px;
-  }
-  .hexagon::before {
-    height: 150px;
-  }
-  .bigHexagon::before {
-    height: 350px;
-  } 
-}  
-
-@media screen and (max-width: 1024px) {
-  .hexagon_outline::before {
-    height: 100px;
-  }
-  .hexagon::before {
-    height: 100px;
-  }
-  .bigHexagon::before {
-    height: 280px;
-  }
-  
-}
 
 .perspective {
   perspective: 1000px;
@@ -178,4 +101,18 @@ body {
       0 14px 0 #141414, 
       0 15px 0 #121212, 
       0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+.pale{
+  transform-origin: 50% 34%!important;
+}
+
+.afterImg::after{
+  position: absolute;
+  content: "Après";
+  font-size: 1.5rem;
+  color: white;
+  bottom: 2%;
+  right: 5%;
+ 
 }

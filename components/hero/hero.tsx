@@ -43,8 +43,10 @@ const Hero = () => {
         heroTitle.current,
         {
           opacity: 0,
+          yPercent: 25,
         },
         {
+          yPercent: 0,
           opacity: 1,
           duration: 1,
         }
@@ -87,11 +89,8 @@ const Hero = () => {
           className="absolute inset-0 left-0 text-white flex flex-col justify-center "
         >
           <div className="container">
-            <div className="text-xl lg:text-fluid-4xl 2xl:text-8xl leading-none">
-              Nous
-            </div>
             <div className="text-2xl lg:text-fluid-4xl 2xl:text-8xl leading-none font-extrabold">
-              construisons
+              Construisons
             </div>
             <div className="text-[8vw] leading-none font-extrabold ">
               Aujourd&apos;hui

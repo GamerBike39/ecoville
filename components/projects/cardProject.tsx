@@ -63,6 +63,7 @@ export const ProjectCard = ({
     gsap.to(cardImage.current, {
       scale: isOpen ? 1 : 1.5,
       duration: 0.5,
+      filter: isOpen ? "brightness(1)" : "brightness(0.5)",
       //   ease: "sine.inOut",
     });
 
@@ -90,19 +91,17 @@ export const ProjectCard = ({
           className="object-cover object-center w-full h-full -z-20 rounded-2xl mix-blend-multiply"
         />
       )}
-      <div className="absolute -z-10 w-full h-full bg-gradient-to-t from-black from-5% to-transparent rounded-2xl" />
+      <div className="absolute bottom-0 left-0 -z-10 w-full h-1/3 bg-gradient-to-t from-black from-5% to-transparent rounded-2xl" />
 
       <div className="w-full p-4 mt-auto flex flex-col justify-end h-full">
-        <h3 className="mt-auto text-fluid-xl text-white">{title}</h3>
+        <h3 className="mt-auto text-fluid-xl text-white font-bold">{title}</h3>
         <div
           ref={descriptionRef}
           className={`overflow-hidden ${
             animate ? "" : isOpen ? "h-auto" : "h-0"
           }`}
         >
-          <p className="text-base text-slate-300 pt-2 max-w-lg">
-            {description}
-          </p>
+          <p className="text-xl text-slate-200 pt-2 max-w-lg">{description}</p>
         </div>
       </div>
     </div>

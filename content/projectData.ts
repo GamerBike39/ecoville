@@ -1,4 +1,4 @@
-import { EcovilleProjectData } from "./types/typeData";
+import { EcovilleProjectData } from "./types/contentType";
 
 export const ecovilleProjectData = {
   title: "Harmonie Hexagonale",

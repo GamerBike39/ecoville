@@ -20,20 +20,6 @@ const config: Config = {
         hero: "url('/bg/bg_home.webp')",
       },
       colors: {
-        "pastel-green": {
-          "50": "#f0fdf3",
-          "100": "#dbfde5",
-          "200": "#b9f9cc",
-          "300": "#83f2a4",
-          "400": "#53e47f",
-          "500": "#1ec952",
-          "600": "#12a740",
-          "700": "#128335",
-          "800": "#14672e",
-          "900": "#125529",
-          "950": "#042f13",
-        },
-
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -88,6 +74,10 @@ const config: Config = {
         "fluid-2xl": "clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem)",
         "fluid-3xl": "clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem)",
         "fluid-4xl": "clamp(3.05rem, 3.54vw + 2.17rem, 5rem)",
+        "fluid-5xl": "clamp(3.82rem, 4.77vw + 2.64rem, 6.45rem)",
+        "fluid-6xl": "clamp(4.68rem, 5.87vw + 3.29rem, 7.81rem)",
+        "fluid-7xl": "clamp(5.68rem, 7.3vw + 3.84rem, 9.25rem)",
+        "fluid-8xl": "clamp(6.68rem, 9.3vw + 4.39rem, 10.65rem)",
       },
     },
   },
