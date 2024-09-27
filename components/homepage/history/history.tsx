@@ -1,4 +1,6 @@
+import { ContentBorder } from "@/components/micro-components/ContentBorder";
 import historyData from "@/content/historyData";
+import { cn } from "@/lib/utils";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -9,13 +11,12 @@ export const History = () => {
 
   return (
     <section className="py-20 min-h-svh">
-      <h3 className="text-fluid-4xl lg:text-fluid-6xl tracking-wider container leading-none font-bold mb-6">
+      <h3 className="text-fluid-2xl lg:text-fluid-4xl 3xl:text-fluid-5xl container leading-none font-bold mb-6">
         {title}
       </h3>
       <div className="flex flex-col items-center justify-center container">
         <div className="relative max-lg:flex-col flex gap-6">
           <ReactCompareSlider
-            // className="aspect-video"
             itemOne={
               <ReactCompareSliderImage
                 src={beforeImg}
@@ -31,15 +32,19 @@ export const History = () => {
               />
             }
           />
-          <div>
-            <p className="max-w-lg mt-20 first-letter:font-bold first-letter:text-xl border-l border-foreground pl-5 h-fit ">
-              {content}
-            </p>
+          <div className="mt-20">
+            <ContentBorder>{content}</ContentBorder>
             <div className="grid  md:grid-cols-2 max-w-lg mt-10">
               {keyPoints.map((keyPoint, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-2 border p-2 hover:bg-slate-50 transition "
+                  className={cn(
+                    "flex flex-col gap-2 py-2 px-4  hover:bg-slate-50 transition",
+                    index % 2 === 0 && "lg:border-r lg:border-black/10",
+                    index === 0 && "lg:border-r border-b border-black/10",
+                    index === 1 && "lg:border-l border-b border-black/10",
+                    index === 2 && "max-lg:border-b border-black/10"
+                  )}
                 >
                   <h2 className="text-xl font-bold">{keyPoint.title}</h2>
                   <p className="">{keyPoint.description}</p>

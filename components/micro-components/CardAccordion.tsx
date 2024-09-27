@@ -3,19 +3,24 @@ import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-export const ProjectCard = ({
+export const CardAccordion = ({
   title,
   description,
   image,
   animate = true,
   direction = "left",
+  duration = 0.3,
+  className,
 }: {
   title: string;
   description: string;
   image?: string;
   animate?: boolean;
   direction?: "left" | "right";
+  duration?: number;
+  className?: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const descriptionRef = useRef(null);
@@ -26,11 +31,11 @@ export const ProjectCard = ({
     gsap.set(descriptionRef.current, { height: 0 });
 
     gsap.from(cardRef.current, {
-      opacity: 0,
+      opacity: 0.5,
       y: 50,
-      rotateZ: direction === "left" ? -5 : 5,
+      rotateZ: direction === "left" ? -1 : 1,
       rotateX: 20,
-      duration: direction === "left" ? 0.5 : 0.4,
+      duration: duration,
       ease: "power2.inOut",
       scrollTrigger: {
         trigger: cardRef.current,
@@ -42,7 +47,9 @@ export const ProjectCard = ({
     });
   }, []);
 
-  const toggleAccordion = () => {
+  const { contextSafe } = useGSAP({ scope: cardRef.current! });
+
+  const toggleAccordion = contextSafe(() => {
     setIsOpen(!isOpen);
 
     gsap.fromTo(
@@ -64,7 +71,7 @@ export const ProjectCard = ({
       scale: isOpen ? 1 : 1.5,
       duration: 0.5,
       filter: isOpen ? "brightness(1)" : "brightness(0.5)",
-      //   ease: "sine.inOut",
+      ease: "sine.inOut",
     });
 
     gsap.from(cardRef.current, {
@@ -73,12 +80,15 @@ export const ProjectCard = ({
       scale: 1.01,
       ease: "power2.inOut",
     });
-  };
+  });
 
   return (
     <div
       ref={cardRef}
-      className={`border rounded-3xl shadow-lg cursor-pointer relative aspect-square group overflow-hidden hover:outline-dotted outline-3 outline-black/30`}
+      className={cn(
+        `border rounded-3xl shadow-lg cursor-pointer relative aspect-square group overflow-hidden hover:outline-dotted outline-3 outline-black/30`,
+        className
+      )}
       onClick={toggleAccordion}
     >
       {image && (

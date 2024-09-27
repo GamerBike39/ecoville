@@ -69,13 +69,13 @@ const Hero = () => {
           <div className="absolute left-0 bottom-0 w-full h-1/3 bg-gradient-to-t from-background via-background/30 to-transparent" />
           <div ref={heroTitle} className="opacity-0 space-y-20">
             <h1 className="first-letter:uppercase text-6xl lg:text-8xl xl:text-[10vw] font-extrabold text-shadow text-white">
-              écoville
+              <span className="text-green-300">éco</span>ville
             </h1>
             <div className=" w-full flex items-center justify-center gap-20 "></div>
           </div>
         </section>
       </div>
-      <div className="image-container perspective absolute inset-0 w-full h-svh overflow-hidden">
+      <div className="image-container perspective absolute inset-0 w-full min-h-svh overflow-hidden">
         <Image
           ref={imageRef}
           src="/bg/firstBg.webp"
@@ -86,7 +86,7 @@ const Hero = () => {
         />
         <div
           ref={textContainerRef}
-          className="absolute inset-0 left-0 text-white flex flex-col justify-center "
+          className="absolute inset-0 left-0 text-white flex flex-col justify-center max-h-svh "
         >
           <div className="container">
             <div className="text-2xl lg:text-fluid-4xl 2xl:text-8xl leading-none font-extrabold">

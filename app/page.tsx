@@ -1,8 +1,9 @@
-import { Archi } from "@/components/architecture/archi";
-import { Governance } from "@/components/governance/governance";
-import Hero from "@/components/hero/hero";
-import { History } from "@/components/history/history";
-import { Project } from "@/components/projects/projects";
+import Hero from "@/components/homepage/hero/hero";
+import { Project } from "@/components/homepage/projects/projects";
+import { History } from "@/components/homepage/history/history";
+import { Archi } from "@/components/homepage/architecture/archi";
+import { Governance } from "@/components/homepage/governance/governance";
+import { Tourisme } from "@/components/homepage/tourisme/tourisme";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <Project />
       <History />
       <Archi />
-      <Governance />
+      {/* <Governance /> */}
+      <Tourisme />
     </>
   );
 }

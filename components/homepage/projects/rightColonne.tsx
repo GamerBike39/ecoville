@@ -1,6 +1,7 @@
 import ecovilleProjectData from "@/content/projectData";
-import { ProjectCard } from "./cardProject";
+
 import { TitleProjects } from "./titleProjects";
+import { CardAccordion } from "@/components/micro-components/CardAccordion";
 
 const { features, whyJoin } = ecovilleProjectData;
 
@@ -12,7 +13,7 @@ export const SecondCol = () => {
         <TitleProjects title="Particularités" />
         <div className="grid grid-cols-1 gap-6 lg:gap-64 perspective">
           {features.map(({ title, description, image }, index) => (
-            <ProjectCard
+            <CardAccordion
               key={index}
               title={title}
               description={description}
@@ -28,7 +29,7 @@ export const SecondCol = () => {
         <TitleProjects title="Valeurs" delay={0.3} />
         <div className="grid grid-cols-1 gap-6 lg:gap-96  perspective">
           {whyJoin.reasons.map(({ title, description, image }, index) => (
-            <ProjectCard
+            <CardAccordion
               key={index}
               title={title}
               description={description}

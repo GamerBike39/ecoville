@@ -28,8 +28,7 @@ export const governanceData: EcovilleGovernanceData = {
     },
     {
       title: "Application mobile",
-      description:
-        "Plateforme de démocratie participative, notre capital cloud vous appartient",
+      description: "Plateforme de démocratie participative",
       image: "/governance/appli.webp",
       icon: (
         <div className="border rounded-3xl p-4">

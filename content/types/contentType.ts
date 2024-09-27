@@ -85,6 +85,12 @@ export interface EcovilleEconomyData {
   features: EconomyFeature[];
 }
 
+export interface EcovilleTourismData {
+  title: string;
+  content: string;
+  features: Feature[];
+}
+
 // Si vous avez besoin d'un type global pour regrouper toutes les données d'Écoville
 export interface EcovilleData {
   project: EcovilleProjectData;
@@ -94,4 +100,5 @@ export interface EcovilleData {
   innovation: EcovilleInnovationData;
   education: EcovilleEducationData;
   economy: EcovilleEconomyData;
+  tourism: EcovilleTourismData;
 }
