@@ -1,4 +1,4 @@
-import { MapPin, Binoculars, Compass, Bike, Wifi } from "lucide-react";
+import { MapPin, Binoculars, Compass, Bike, Wifi, Leaf } from "lucide-react";
 import { EcovilleTourismData } from "./types/contentType";
 
 export const tourismData: EcovilleTourismData = {
@@ -55,11 +55,11 @@ export const tourismData: EcovilleTourismData = {
       description:
         "Promenade dans les jardins suspendus des gratte-ciels écologiques",
       image: "/tourism/vertical-forest.webp",
-      //   icon: (
-      //     <div className="border rounded-3xl p-4">
-      //       <Tree strokeOpacity={0.8} size={40} className="text-white" />
-      //     </div>
-      //   ),
+      icon: (
+        <div className="border rounded-3xl p-4">
+          <Leaf strokeOpacity={0.8} size={40} className="text-white" />
+        </div>
+      ),
     },
     {
       title: "Nuit dans une Capsule Éco-Futuriste",
