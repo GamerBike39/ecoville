@@ -6,7 +6,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Hexagon, Leaf } from "lucide-react";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollToPlugin);
+// gsap.registerPlugin(ScrollToPlugin);
 
 interface MenuItem {
   label: string;
@@ -31,17 +31,22 @@ const Hero: React.FC = () => {
   useGSAP(
     () => {
       const tl = gsap.timeline();
-      tl.from("h1", { opacity: 0, y: 50, duration: 1 })
-        .from("p", { opacity: 0, y: 30, duration: 0.8 }, "-=0.5")
+      tl.from("h1", { opacity: 0, scale: 0.8, y: 50, duration: 0.8 })
+        .from("p", { opacity: 0, y: 30, duration: 0.5 }, "-=0.5")
         .from(
           "li",
           {
             opacity: 0,
             y: 20,
-            stagger: 0.2,
-            duration: 0.5,
+            stagger: 0.1,
+            duration: 0.3,
           },
           "-=0.3"
+        )
+        .from(
+          "img",
+          { opacity: 0, filter: "sepia(100%)", duration: 0.5 },
+          "-=0.1"
         );
     },
     { scope: containerRef }

@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { MousePointerClick } from "lucide-react";
 
 export const CardAccordion = ({
   title,
@@ -23,6 +24,7 @@ export const CardAccordion = ({
   className?: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const descriptionRef = useRef(null);
   const cardRef = useRef(null);
   const cardImage = useRef(null);
@@ -51,7 +53,7 @@ export const CardAccordion = ({
 
   const toggleAccordion = contextSafe(() => {
     setIsOpen(!isOpen);
-
+    setIsClicked(true);
     gsap.fromTo(
       descriptionRef.current,
       {
@@ -86,7 +88,7 @@ export const CardAccordion = ({
     <div
       ref={cardRef}
       className={cn(
-        `border rounded-3xl shadow-lg cursor-pointer relative aspect-square group overflow-hidden hover:outline-dotted outline-3 outline-black/30`,
+        `relative border rounded-3xl shadow-lg cursor-pointer  aspect-square group overflow-hidden hover:shadow-xl group`,
         className
       )}
       onClick={toggleAccordion}
@@ -104,8 +106,11 @@ export const CardAccordion = ({
       <div className="absolute bottom-0 left-0 -z-10 w-full h-1/3 bg-gradient-to-t from-black from-10% to-transparent rounded-2xl" />
 
       <div className="w-full p-4 mt-auto flex flex-col justify-end h-full">
-        <h3 className="mt-auto text-fluid-lg leading-tight text-white font-bold">
-          {title}
+        <h3 className="mt-auto text-fluid-lg leading-tight text-white font-bold flex items-center gap-2">
+          {title}{" "}
+          {!isClicked && (
+            <MousePointerClick className="w-4 h-4 opacity-0 group-hover:opacity-100" />
+          )}
         </h3>
         <div
           ref={descriptionRef}
