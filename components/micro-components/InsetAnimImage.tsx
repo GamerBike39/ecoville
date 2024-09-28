@@ -23,14 +23,14 @@ export const InsetAnimImage = ({
       filter: "grayscale(50%)",
       rotateY: index! % 2 === 0 ? 10 : -10,
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
       ease: "power2.inOut",
       scrollTrigger: {
         trigger: imageRef.current,
-        start: "top 100%",
+        start: "top 80%",
         end: "bottom 30%",
         toggleActions: "play none none none",
-        scrub: true,
+        // scrub: true,
       },
     });
   }, [imageRef]);
@@ -44,7 +44,7 @@ export const InsetAnimImage = ({
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       className={className}
       placeholder="blur"
-      blurDataURL="/bg/firstBg.webp"
+      blurDataURL={src}
       loading="lazy"
     />
   );

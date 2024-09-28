@@ -2,6 +2,7 @@ import { BoldText } from "@/components/micro-components/BoldText";
 import { ContentBorder } from "@/components/micro-components/ContentBorder";
 import historyData from "@/content/historyData";
 import { cn } from "@/lib/utils";
+import { Suspense } from "react";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -17,22 +18,28 @@ export const History = () => {
       </h3>
       <div className="flex flex-col items-center justify-center container">
         <div className="relative max-lg:flex-col flex gap-6">
-          <ReactCompareSlider
-            itemOne={
-              <ReactCompareSliderImage
-                src={beforeImg}
-                alt="Image d'écoville avant la rénovation"
-                className="cursor-pointer"
+          <Suspense fallback={<div>Chargement...</div>}>
+            {beforeImg && afterImg && (
+              <ReactCompareSlider
+                itemOne={
+                  <ReactCompareSliderImage
+                    src={beforeImg}
+                    alt="Image d'écoville avant la rénovation"
+                    className="cursor-pointer"
+                    loading="lazy"
+                  />
+                }
+                itemTwo={
+                  <ReactCompareSliderImage
+                    src={afterImg}
+                    alt="Image d'écoville après la rénovation"
+                    className="cursor-pointer"
+                    loading="lazy"
+                  />
+                }
               />
-            }
-            itemTwo={
-              <ReactCompareSliderImage
-                src={afterImg}
-                alt="Image d'écoville après la rénovation"
-                className="cursor-pointer"
-              />
-            }
-          />
+            )}
+          </Suspense>
           <div className="mt-20">
             <ContentBorder className="mt-10 lg:mt-20">
               <BoldText content={content} />

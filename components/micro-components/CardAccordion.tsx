@@ -77,7 +77,6 @@ export const CardAccordion = ({
     });
 
     gsap.from(cardRef.current, {
-      // padding: isOpen ? "1rem" : "1.5rem",
       duration: 0.5,
       scale: 1.01,
       ease: "power2.inOut",
@@ -100,6 +99,8 @@ export const CardAccordion = ({
           alt={title}
           fill
           loading="lazy"
+          placeholder="blur"
+          blurDataURL={image}
           className="object-cover object-center w-full h-full -z-10 rounded-2xl mix-blend-multiply"
         />
       )}
