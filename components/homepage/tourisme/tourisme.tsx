@@ -1,5 +1,5 @@
 import { tourismData } from "@/content/tourismData";
-import { StickySection } from "../governance/stickySection";
+import { StickySection } from "../../micro-components/stickySection";
 import { ContentBorder } from "@/components/micro-components/ContentBorder";
 
 export const Tourisme = () => {
@@ -10,8 +10,11 @@ export const Tourisme = () => {
           {tourismData.title}
         </h3>
 
-        <ContentBorder>{tourismData.content}</ContentBorder>
+        <ContentBorder className="max-lg:my-10">
+          {tourismData.content}
+        </ContentBorder>
       </div>
+
       <StickySection features={tourismData.features} />
     </section>
   );

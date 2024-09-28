@@ -8,9 +8,9 @@ export const FirstCol = () => {
     <div className=" py-10 mb-5  lg:min-h-svh  lg:h-svh lg:sticky  top-20 xl:w-1/3">
       <div className="flex flex-col justify-start  h-full py-4 pl-3 w-fit gap-10">
         <div className="max-w-xl container">
-          <h1 className="text-fluid-xl 2xl:text-6xl leading-none font-extrabold ">
+          <h2 className="text-fluid-xl 2xl:text-6xl leading-none font-extrabold ">
             {title}
-          </h1>
+          </h2>
           <h2 className="max-w-sm text-fluid-sm text-balance  mt-4">
             {subtitle}
           </h2>

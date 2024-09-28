@@ -31,7 +31,7 @@ export const TitleProjects = ({
   return (
     <h3
       ref={titleProject}
-      className="text-fluid-2xl font-bold border-b text-center mb-5"
+      className="text-fluid-xl opacity-80 border-b text-center mb-5"
     >
       {title}
     </h3>

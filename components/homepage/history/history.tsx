@@ -10,8 +10,8 @@ export const History = () => {
   const { title, content, keyPoints, afterImg, beforeImg } = historyData;
 
   return (
-    <section className="py-20 min-h-svh">
-      <h3 className="text-fluid-2xl lg:text-fluid-4xl 3xl:text-fluid-5xl container leading-none font-bold mb-6">
+    <section className="py-20 min-h-svh snap-y snap-mandatory">
+      <h3 className="snap-start text-fluid-2xl lg:text-fluid-4xl 3xl:text-fluid-5xl container leading-none font-bold mb-6">
         {title}
       </h3>
       <div className="flex flex-col items-center justify-center container">
@@ -42,11 +42,11 @@ export const History = () => {
                     "flex flex-col gap-2 py-2 px-4  hover:bg-slate-50 transition",
                     index % 2 === 0 && "lg:border-r lg:border-black/10",
                     index === 0 && "lg:border-r border-b border-black/10",
-                    index === 1 && "lg:border-l border-b border-black/10",
+                    index === 1 && " border-b border-black/10",
                     index === 2 && "max-lg:border-b border-black/10"
                   )}
                 >
-                  <h2 className="text-xl font-bold">{keyPoint.title}</h2>
+                  <h4 className="text-xl font-bold">{keyPoint.title}</h4>
                   <p className="">{keyPoint.description}</p>
                 </div>
               ))}

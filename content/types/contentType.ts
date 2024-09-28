@@ -5,6 +5,12 @@ export interface Feature {
   description: string;
   image?: string;
   icon?: React.ReactNode;
+  cta?: {
+    buttonText?: string;
+    href?: string;
+    price: string;
+    desc?: string;
+  };
 }
 
 export interface Reason {

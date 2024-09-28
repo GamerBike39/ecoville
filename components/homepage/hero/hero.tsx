@@ -59,17 +59,17 @@ const Hero = () => {
   return (
     <div
       ref={wrapperRef}
-      className="wrapper relative w-full  min-h-[150svh] h-svh"
+      className="wrapper relative w-full  min-h-[100svh] h-svh pb-20 mb-20"
     >
-      <div className="content  w-full min-h-[150svh]">
+      <div className="content  w-full min-h-[100svh]">
         <section
           ref={heroRef}
-          className="section relative flex flex-col items-center justify-center hero bg-hero brightness-50   min-h-[150svh] bg-no-repeat bg-scroll bg-cover"
+          className="section relative flex flex-col items-center justify-center hero bg-hero brightness-50   min-h-[100svh] bg-no-repeat bg-fixed bg-cover bg-center"
         >
           <div className="absolute left-0 bottom-0 w-full h-1/3 bg-gradient-to-t from-background via-background/30 to-transparent" />
           <div ref={heroTitle} className="opacity-0 space-y-20">
-            <h1 className="first-letter:uppercase text-6xl lg:text-8xl xl:text-[10vw] font-extrabold text-shadow text-white">
-              <span className="text-green-300">éco</span>ville
+            <h1 className="first-letter:uppercase max-lg:text-fluid-6xl text-[10vw] font-extrabold text-shadow text-white">
+              <span className="text-emerald-500">éco</span>ville
             </h1>
             <div className=" w-full flex items-center justify-center gap-20 "></div>
           </div>

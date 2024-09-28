@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-athiti), Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -74,6 +74,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+   
   }
 }
 
@@ -84,35 +85,16 @@ body {
 
 .text-shadow{
   text-shadow: 
-      0 -1px 0 #fff, 
-      0 1px 0 #2e2e2e, 
-      0 2px 0 #2c2c2c, 
-      0 3px 0 #2a2a2a, 
-      0 4px 0 #282828, 
-      0 5px 0 #262626, 
-      0 6px 0 #242424, 
-      0 7px 0 #222, 
-      0 8px 0 #202020, 
-      0 9px 0 #1e1e1e, 
-      0 10px 0 #1c1c1c, 
-      0 11px 0 #1a1a1a, 
-      0 12px 0 #181818, 
-      0 13px 0 #161616, 
-      0 14px 0 #141414, 
-      0 15px 0 #121212, 
-      0 22px 30px rgba(0, 0, 0, 0.9);
+      0 -1px 0 #ffffff, 
+    
+      
+     
+    
+      0 15px 10px #1212124b, 
+      0 0px 50px rgba(0, 0, 0, 0.575);
 }
 
-.pale{
-  transform-origin: 50% 34%!important;
+h1, h2, h3 {
+  font-family: var(--font-paytone-one);
 }
 
-.afterImg::after{
-  position: absolute;
-  content: "Après";
-  font-size: 1.5rem;
-  color: white;
-  bottom: 2%;
-  right: 5%;
- 
-}

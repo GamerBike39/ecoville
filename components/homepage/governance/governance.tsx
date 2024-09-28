@@ -1,5 +1,5 @@
 import governanceData from "@/content/governanceData";
-import { StickySection } from "./stickySection";
+import { StickySection } from "../../micro-components/stickySection";
 import { ContentBorder } from "@/components/micro-components/ContentBorder";
 
 export const Governance = () => {
