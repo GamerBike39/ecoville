@@ -1,3 +1,4 @@
+import { BoldText } from "@/components/micro-components/BoldText";
 import { ContentBorder } from "@/components/micro-components/ContentBorder";
 import historyData from "@/content/historyData";
 import { cn } from "@/lib/utils";
@@ -10,7 +11,7 @@ export const History = () => {
   const { title, content, keyPoints, afterImg, beforeImg } = historyData;
 
   return (
-    <section className="py-20 min-h-svh snap-y snap-mandatory">
+    <section id="histoire" className=" min-h-svh snap-y snap-mandatory">
       <h3 className="snap-start text-fluid-2xl lg:text-fluid-4xl 3xl:text-fluid-5xl container leading-none font-bold mb-6">
         {title}
       </h3>
@@ -33,7 +34,9 @@ export const History = () => {
             }
           />
           <div className="mt-20">
-            <ContentBorder>{content}</ContentBorder>
+            <ContentBorder className="mt-10 lg:mt-20">
+              <BoldText content={content} />
+            </ContentBorder>
             <div className="grid  md:grid-cols-2 max-w-lg mt-10">
               {keyPoints.map((keyPoint, index) => (
                 <div

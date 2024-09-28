@@ -3,7 +3,7 @@ import { EcovilleArchitectureData } from "./types/contentType";
 export const architectureData: EcovilleArchitectureData = {
   title: "Notre Signature Architecturale",
   content:
-    "Chaque bâtiment, chaque quartier d'Écoville incarne notre engagement envers l'efficacité et l'harmonie. Nos structures hexagonales ne sont pas qu'esthétiques ; elles optimisent l'espace, favorisent la circulation naturelle de l'air et maximisent l'exposition solaire pour une gestion énergétique optimale.",
+    "Chaque bâtiment, chaque quartier d'Écoville incarne notre engagement envers l'**efficacité et l'harmonie**. Nos structures hexagonales ne sont pas qu'esthétiques ; elles **optimisent l'espace**, favorisent la circulation naturelle de l'air et maximisent l'exposition solaire pour une **gestion énergétique optimale**.",
   features: [
     {
       title: "Bâtiments modulaires",

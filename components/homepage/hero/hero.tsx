@@ -1,107 +1,109 @@
 "use client";
 import React, { useRef } from "react";
 import gsap from "gsap";
-import Image from "next/image";
 import { useGSAP } from "@gsap/react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { Hexagon, Leaf } from "lucide-react";
+import Image from "next/image";
 
-const Hero = () => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-  const heroRef = useRef<HTMLElement>(null);
-  const textContainerRef = useRef<HTMLDivElement>(null);
-  const heroTitle = useRef<HTMLDivElement>(null);
+gsap.registerPlugin(ScrollToPlugin);
 
-  useGSAP(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: wrapperRef.current,
-          start: "top top",
-          end: "+=100%",
-          pin: true,
-          scrub: 1,
-        },
-      });
+interface MenuItem {
+  label: string;
+  target: string;
+  offset?: number;
+}
 
-      tl.to([imageRef.current, textContainerRef.current], {
-        scale: 2.5,
-        opacity: 0,
-        z: 350,
-        transformOrigin: "center center",
-        ease: "power1.inOut",
-      }).to(
-        heroRef.current,
-        {
-          filter: "brightness(1)",
-          transformOrigin: "center center",
-          ease: "power1.inOut",
-        },
-        "<"
-      );
+interface MenuItemProps extends MenuItem {
+  onClick: (target: string, offset?: number) => void;
+}
 
-      tl.fromTo(
-        heroTitle.current,
-        {
-          opacity: 0,
-          yPercent: 25,
-        },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 1,
-        }
-      );
-    }, wrapperRef);
+const Hero: React.FC = () => {
+  const containerRef = useRef<HTMLElement>(null);
 
-    return () => ctx.revert();
-  }, []);
+  const menuItems: MenuItem[] = [
+    { label: "Projet", target: "#project" },
+    { label: "Histoire", target: "#histoire" },
+    { label: "Signature", target: "#architecture" },
+    { label: "Activités", target: "#tourisme", offset: 100 },
+  ];
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+      tl.from("h1", { opacity: 0, y: 50, duration: 1 })
+        .from("p", { opacity: 0, y: 30, duration: 0.8 }, "-=0.5")
+        .from(
+          "li",
+          {
+            opacity: 0,
+            y: 20,
+            stagger: 0.2,
+            duration: 0.5,
+          },
+          "-=0.3"
+        );
+    },
+    { scope: containerRef }
+  );
+  const handleMenuClick = (target: string, offset: number = 0): void => {
+    gsap.to(window, {
+      duration: 0.5,
+      scrollTo: { y: target, offsetY: offset },
+    });
+  };
+
+  const MenuItem: React.FC<MenuItemProps> = ({
+    label,
+    target,
+    offset,
+    onClick,
+  }) => (
+    <li
+      className="flex items-center gap-2 relative group w-fit cursor-pointer"
+      onClick={() => onClick(target, offset)}
+    >
+      <span className="absolute -z-10 bottom-0 w-full h-[3px] bg-gradient-to-t scale-x-0 from-green-400 to-emerald-500 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 origin-left transition-all duration-300"></span>
+      <Hexagon className="group-hover:fill-green-400 group-hover:stroke-green-400 group-hover:rotate-45 transition duration-500" />
+      {label}
+    </li>
+  );
 
   return (
-    <div
-      ref={wrapperRef}
-      className="wrapper relative w-full  min-h-[100svh] h-svh pb-20 mb-20"
+    <section
+      ref={containerRef}
+      className="min-h-svh max-lg:flex-col flex items-center justify-center"
     >
-      <div className="content  w-full min-h-[100svh]">
-        <section
-          ref={heroRef}
-          className="section relative flex flex-col items-center justify-center hero bg-hero brightness-50   min-h-[100svh] bg-no-repeat bg-fixed bg-cover bg-center"
-        >
-          <div className="absolute left-0 bottom-0 w-full h-1/3 bg-gradient-to-t from-background via-background/30 to-transparent" />
-          <div ref={heroTitle} className="opacity-0 space-y-20">
-            <h1 className="first-letter:uppercase max-lg:text-fluid-6xl text-[10vw] font-extrabold text-shadow text-white">
-              <span className="text-emerald-500">éco</span>ville
-            </h1>
-            <div className=" w-full flex items-center justify-center gap-20 "></div>
-          </div>
-        </section>
-      </div>
-      <div className="image-container perspective absolute inset-0 w-full min-h-svh overflow-hidden">
-        <Image
-          ref={imageRef}
-          src="/bg/firstBg.webp"
-          alt="image"
-          className="object-cover min-h-svh w-screen"
-          width={1920}
-          height={1080}
-        />
-        <div
-          ref={textContainerRef}
-          className="absolute inset-0 left-0 text-white flex flex-col justify-center max-h-svh "
-        >
-          <div className="container">
-            <div className="text-2xl lg:text-fluid-4xl 2xl:text-8xl leading-none font-extrabold">
-              Construisons
-            </div>
-            <div className="text-[8vw] leading-none font-extrabold ">
-              Aujourd&apos;hui
-            </div>
-          </div>
-          <div className="translate-y-10 pr-20 text-fluid-4xl xl:text-[8vw]  leading-none font-extrabold flex justify-end">
-            <div>Le Futur</div>
-          </div>
+      <div className="h-full w-1/2 flex flex-col items-center justify-start">
+        <div className="relative">
+          <Leaf
+            className="fill-white opacity-5 absolute top-0 right-0 -z-10"
+            size={400}
+          />
+          <h1 className="text-fluid-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-green-400 to-emerald-500">
+            Écoville
+          </h1>
+          <p className="text-fluid-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-green-700 to-emerald-800">
+            La Ville Écologique qu&apos;il faut vivre
+          </p>
+          <ul className="grid grid-cols-2 gap-5 mt-10 *:text-fluid-xl">
+            {menuItems.map((item, index) => (
+              <MenuItem key={index} {...item} onClick={handleMenuClick} />
+            ))}
+          </ul>
         </div>
       </div>
-    </div>
+      <div className="relative parralelogram w-full lg:w-1/2 h-full aspect-square">
+        <Image
+          src="/bg/bg_home.webp"
+          alt="image"
+          className="object-cover min-h-svh w-full"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+          loading="eager"
+        />
+      </div>
+    </section>
   );
 };
 

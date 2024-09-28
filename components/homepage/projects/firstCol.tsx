@@ -1,3 +1,4 @@
+import { BoldText } from "@/components/micro-components/BoldText";
 import { ContentBorder } from "@/components/micro-components/ContentBorder";
 import ecovilleProjectData from "@/content/projectData";
 
@@ -17,7 +18,9 @@ export const FirstCol = () => {
         </div>
         {/* whyEcoville */}
         <div className="max-w-sm px-3 flex h-fit ">
-          <ContentBorder>{whyEcoville.content}</ContentBorder>
+          <ContentBorder>
+            <BoldText content={whyEcoville.content} />
+          </ContentBorder>
         </div>
       </div>
     </div>

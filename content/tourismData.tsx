@@ -4,7 +4,7 @@ import { EcovilleTourismData } from "./types/contentType";
 export const tourismData: EcovilleTourismData = {
   title: "Découvrir Écoville",
   content:
-    "Écoville offre une expérience touristique unique, alliant innovation écologique et immersion dans la nature. Que vous soyez passionné d'architecture durable, amateur de nature ou simplement curieux de découvrir le futur de l'urbanisme, Écoville a quelque chose à vous offrir.",
+    "Écoville offre une **expérience touristique unique**, alliant innovation écologique et immersion dans la nature. Que vous soyez passionné d'architecture durable, amateur de nature ou simplement curieux de découvrir le futur de l'urbanisme, Écoville a quelque chose à vous offrir.",
   features: [
     {
       title: "La Tour Hexagonale",

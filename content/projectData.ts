@@ -7,7 +7,7 @@ export const ecovilleProjectData = {
   whyEcoville: {
     title: "Pourquoi Écoville ?",
     content:
-      "Dans un monde en quête d'équilibre, Écoville émerge comme une solution visionnaire. Inspirée par la structure parfaite des ruches d'abeilles, notre ville adopte la forme hexagonale pour créer un environnement urbain en parfaite symbiose avec la nature.",
+      "Dans un monde en quête d'équilibre, Écoville émerge comme une **solution visionnaire**. Inspirée par la structure parfaite des ruches d'abeilles, notre ville adopte la forme hexagonale pour créer un environnement urbain en **parfaite symbiose avec la nature**.",
   },
 
   features: [
