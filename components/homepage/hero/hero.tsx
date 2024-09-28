@@ -2,11 +2,8 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Hexagon, Leaf } from "lucide-react";
 import Image from "next/image";
-
-// gsap.registerPlugin(ScrollToPlugin);
 
 interface MenuItem {
   label: string;
@@ -89,7 +86,7 @@ const Hero: React.FC = () => {
             Écoville
           </h1>
           <p className="text-fluid-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-green-700 to-emerald-800">
-            La Ville Écologique qu&apos;il faut vivre
+            Découvrez le futur aujourd&apos;hui
           </p>
           <ul className="grid grid-cols-2 gap-5 mt-10 *:text-fluid-xl">
             {menuItems.map((item, index) => (
