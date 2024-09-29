@@ -7,11 +7,11 @@ import { Leaf } from "lucide-react";
 import { HoverLinkEffect } from "../micro-components/HoverLinkEffect";
 
 const menuItems = [
-  { href: "#project", label: "Projet" },
-  { href: "#histoire", label: "Histoire" },
-  { href: "#architecture", label: "Signature" },
-  { href: "#tourisme", label: "Activités" },
-  { href: "#cuisine", label: "Restauration" },
+  { href: "/#project", label: "Projet" },
+  { href: "/#histoire", label: "Histoire" },
+  { href: "/#architecture", label: "Signature" },
+  { href: "/#tourisme", label: "Activités" },
+  { href: "/#cuisine", label: "Restauration" },
 ];
 
 export const Nav: React.FC = () => {

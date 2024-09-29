@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EcoVille
 
-## Getting Started
+Site web d'Écoville imaginé pour le [concours](https://youtu.be/LxfRrcanK2A?si=QOks2GAOcnywLSXZ) de l'[École du web](https://www.ecole-du-web.net/).
 
-First, run the development server:
+Écoville est une ville imaginaire qui s'inspire de la forme hexagonale et de ses caractéristiques environnementales. Elle est conçue pour minimiser son impact environnemental tout en favorisant une vie communautaire active et ouverte.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Outils de développement
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pour le développer, j'ai utilisé le framework [Next.js](https://nextjs.org/) (App Router) et [Tailwind CSS](https://tailwindcss.com/) pour le CSS et ses classes utilitaires.
+La librairie [GSAP](https://www.gsap.com) pour les animations et ses super plugins.
+Pour améliorer l'expérience des animations au scroll, j'utilise [Lenis.js](https://lenis.darkroom.engineering/).
+[shadcn](https://ui.shadcn.com/) a été installé mais aucun composant de la librairie n'a été utilisé.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pour le peu de temps que j'avais, commencé le 25/09 pour un rendu le 29/09, j'ai utilisé un composant tout fait pour la comparaison avant/après, [React Compare Slider](https://react-compare-slider.vercel.app/?path=/docs/docs-introduction--docs), seul composant que je n'ai pas créé pour cette landing page.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Les icônes viennent de [Lucide](https://lucide.dev/) et [Radix UI](https://www.radix-ui.com/docs/primitives/icons/overview).
 
-## Learn More
+Polices utilisées : [Paytone One](https://fonts.google.com/specimen/Paytone+One) et [Athiti](https://fonts.google.com/specimen/Athiti).
 
-To learn more about Next.js, take a look at the following resources:
+Les images ont été entièrement générées par [Midjourney](https://www.midjourney.com/home).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La quasi-totalité du contenu textuel est dans le répertoire `content`.
+La totalité des images  sont dans le répertoire `public`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Expérience
 
-## Deploy on Vercel
+J'ai beaucoup apprécié ce concours. N'ayant pas eu le temps pour faire un multipage, je me suis concentré sur une seule page, avec un menu de navigation accessible via un bouton situé en haut à droite de la page.
+Peut-être pousserai-je le projet un peu plus loin ensuite, pour en faire une base de landing page ^^ avec la gestion du blog etc.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Vous pouvez visiter le site ici : [Écoville](https://ecoville-liart.vercel.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bonne visite à tous ! 👋
+
+P.S. : Je n'ai pas forcément été très rigoureux sur le nommage des commits 🙃

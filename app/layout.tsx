@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
-import { Paytone_One, Athiti } from "next/font/google";
 import "./globals.css";
+import { Paytone_One, Athiti } from "next/font/google";
 import { GSAPProvider } from "@/provider/gsapProvider";
 import { Nav } from "@/components/navigation/nav";
+import { Footer } from "@/components/navigation/footer";
 
 const paytoneOne = Paytone_One({
   weight: "400",
@@ -38,6 +38,7 @@ export default function RootLayout({
         >
           <Nav />
           <main>{children}</main>
+          <Footer />
         </body>
       </GSAPProvider>
     </html>

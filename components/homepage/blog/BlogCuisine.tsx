@@ -80,17 +80,17 @@ export const BlogCuisine: React.FC = () => {
           EXPLORER TOUS NOS RESTAURANTS <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 mb-8">
-        <div>
+      <div className="grid md:grid-cols-2 gap-8 mb-8 group">
+        <div className="relative aspect-video overflow-hidden rounded-xl">
           <Image
             src={ecovilleCulinaryData.highlightedRestaurant.image}
             alt={ecovilleCulinaryData.highlightedRestaurant.title}
-            width={600}
-            height={400}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
+            fill
             loading="lazy"
             placeholder="blur"
             blurDataURL="/svg/placeholder.svg"
-            className="rounded-lg"
+            className="rounded-xl object-cover group-hover:scale-105 transition-all duration-300"
           />
         </div>
         <div>
@@ -121,16 +121,23 @@ export const BlogCuisine: React.FC = () => {
           {ecovilleCulinaryData.articles.map((article, index) => (
             <div
               key={index}
-              className="min-w-80 snap-mandatory min-h-[400px] flex flex-col xl:hover:shadow-lg p-2 rounded-xl transition-all duration-300"
+              className="min-w-80 snap-mandatory min-h-[400px] flex flex-col xl:hover:shadow-lg p-2 rounded-xl group transition-all duration-300"
             >
-              <Image
-                src={article.image!}
-                alt={article.title}
-                width={300}
-                height={200}
-                className="rounded-lg mb-4 aspect-square object-cover"
-              />
-              <span className="text-sm text-gray-500 mb-2 block">Article</span>
+              <div className="relative aspect-video overflow-hidden rounded-xl">
+                <Image
+                  src={article.image!}
+                  alt={article.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/svg/placeholder.svg"
+                  className="rounded-lg mb-4 object-cover group-hover:scale-105 transition-all duration-700"
+                />
+              </div>
+              <span className="text-xs text-gray-500 mt-1 mb-2 block">
+                Article
+              </span>
               <h3 className="text-xl font-bold mb-2 h-14">{article.title}</h3>
               <p className="text-gray-600 mb-4 line-clamp-3">
                 {article.description}
@@ -148,17 +155,21 @@ export const BlogCuisine: React.FC = () => {
         <button
           onClick={() => handleScroll("left")}
           disabled={isLeftDisabled}
+          aria-expanded={isLeftDisabled}
           className="absolute left-0 lg:-left-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500 p-2  shadow-md hexa disabled:bg-gray-400 hover:scale-105 transition-all"
         >
+          <span className="sr-only">Voir les articles précédents</span>
           <ChevronLeft className="h-6 w-6 text-white" strokeWidth={4} />
         </button>
         <button
           onClick={() => handleScroll("right")}
           disabled={isRightDisabled}
+          aria-expanded={isRightDisabled}
           className={cn(
             "absolute right-0 lg:-right-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500  p-2 rounded-full shadow-md hexa disabled:bg-gray-400 hover:scale-105 transition-all"
           )}
         >
+          <span className="sr-only">Voir les articles suivants</span>
           <ChevronRight className="h-6 w-6 text-white" strokeWidth={4} />
         </button>
       </div>
