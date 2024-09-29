@@ -3,12 +3,7 @@ import type { Metadata } from "next";
 import { Paytone_One, Athiti } from "next/font/google";
 import "./globals.css";
 import { GSAPProvider } from "@/provider/gsapProvider";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+import { Nav } from "@/components/navigation/nav";
 
 const paytoneOne = Paytone_One({
   weight: "400",
@@ -41,6 +36,7 @@ export default function RootLayout({
         <body
           className={`${athiti.variable} ${paytoneOne.variable} antialiased`}
         >
+          <Nav />
           <main>{children}</main>
         </body>
       </GSAPProvider>

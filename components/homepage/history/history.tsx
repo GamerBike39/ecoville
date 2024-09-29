@@ -12,8 +12,8 @@ export const History = () => {
   const { title, content, keyPoints, afterImg, beforeImg } = historyData;
 
   return (
-    <section id="histoire" className=" min-h-svh snap-y snap-mandatory">
-      <h3 className="snap-start text-fluid-2xl lg:text-fluid-4xl 3xl:text-fluid-5xl container leading-none font-bold mb-6">
+    <section id="histoire" className=" py-20">
+      <h3 className="text-fluid-2xl lg:text-fluid-4xl 3xl:text-fluid-5xl container leading-none font-bold mb-6">
         {title}
       </h3>
       <div className="flex flex-col items-center justify-center container">

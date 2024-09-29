@@ -98,9 +98,10 @@ export const CardAccordion = ({
           src={image}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
           loading="lazy"
           placeholder="blur"
-          blurDataURL={image}
+          blurDataURL="/svg/placeholder.svg"
           className="object-cover object-center w-full h-full -z-10 rounded-2xl mix-blend-multiply"
         />
       )}

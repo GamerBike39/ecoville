@@ -20,9 +20,10 @@ const Hero: React.FC = () => {
 
   const menuItems: MenuItem[] = [
     { label: "Projet", target: "#project" },
-    { label: "Histoire", target: "#histoire" },
+    { label: "Histoire", target: "#histoire", offset: -80 },
     { label: "Signature", target: "#architecture" },
     { label: "Activités", target: "#tourisme", offset: 100 },
+    { label: "Restauration", target: "#cuisine" },
   ];
 
   useGSAP(
@@ -48,6 +49,7 @@ const Hero: React.FC = () => {
     },
     { scope: containerRef }
   );
+
   const handleMenuClick = (target: string, offset: number = 0): void => {
     gsap.to(window, {
       duration: 0.5,
@@ -74,7 +76,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="min-h-svh max-lg:flex-col flex items-center justify-center"
+      className="pb-20 max-lg:flex-col flex items-center justify-center"
     >
       <div className="h-full w-1/2 flex flex-col items-center justify-start">
         <div className="relative">

@@ -97,6 +97,30 @@ export interface EcovilleTourismData {
   features: Feature[];
 }
 
+export interface FaqData {
+  question: string;
+  answer: string;
+}
+
+export interface Restaurant {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface CulinaryArticle {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface EcovilleCulinaryData {
+  title: string;
+  content: string;
+  highlightedRestaurant: Restaurant;
+  articles: CulinaryArticle[];
+}
+
 // Si vous avez besoin d'un type global pour regrouper toutes les données d'Écoville
 export interface EcovilleData {
   project: EcovilleProjectData;
@@ -107,4 +131,6 @@ export interface EcovilleData {
   education: EcovilleEducationData;
   economy: EcovilleEconomyData;
   tourism: EcovilleTourismData;
+  culinary: EcovilleCulinaryData;
+  faq: FaqData[];
 }
