@@ -43,8 +43,8 @@ export const StickySection = ({ features }: StickySectionProps) => {
             {feature.cta && (
               <div>
                 <Link
-                  href={feature.cta.href!}
-                  className="text-lg text-center text-white font-bold bg-green-700 hover:bg-green-600 py-2 px-3 rounded-xl flex items-center gap-2 group"
+                  href={`#feature-g${index}`}
+                  className="text-lg text-center hover:scale-105 active:scale-95 transition-all text-white font-bold bg-green-700 hover:bg-green-600 py-2 px-3 rounded-xl flex items-center gap-2 group"
                 >
                   {feature.cta.buttonText}{" "}
                   <ArrowRight className="inline-block w-0 group-hover:w-5 transition-all" />

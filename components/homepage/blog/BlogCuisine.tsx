@@ -156,7 +156,7 @@ export const BlogCuisine: React.FC = () => {
           onClick={() => handleScroll("left")}
           disabled={isLeftDisabled}
           aria-expanded={isLeftDisabled}
-          className="absolute left-0 lg:-left-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500 p-2  shadow-md hexa disabled:bg-gray-400 hover:scale-105 transition-all"
+          className="max-lg:hidden absolute left-0 lg:-left-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500 p-2  shadow-md hexa disabled:bg-gray-400 hover:scale-105  active:scale-95 transition-all"
         >
           <span className="sr-only">Voir les articles précédents</span>
           <ChevronLeft className="h-6 w-6 text-white" strokeWidth={4} />
@@ -166,7 +166,7 @@ export const BlogCuisine: React.FC = () => {
           disabled={isRightDisabled}
           aria-expanded={isRightDisabled}
           className={cn(
-            "absolute right-0 lg:-right-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500  p-2 rounded-full shadow-md hexa disabled:bg-gray-400 hover:scale-105 transition-all"
+            "max-lg:hidden absolute right-0 lg:-right-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500  p-2 rounded-full shadow-md hexa disabled:bg-gray-400 hover:scale-105 active:scale-95 transition-all"
           )}
         >
           <span className="sr-only">Voir les articles suivants</span>

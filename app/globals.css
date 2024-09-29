@@ -94,6 +94,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 .scrollbar_cuisine::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  /* width: 0px; */
+  height: 10px;
+  background: rgba(11, 131, 11, 0.212);
+  border-radius: 10px;
+}
+
+.scrollbar_cuisine::-webkit-scrollbar-thumb {
+  background: rgba(224, 6, 6, 0.288);
+  
+  border-radius: 10px;
+  
 }
