@@ -74,7 +74,7 @@ export const BlogCuisine: React.FC = () => {
         </p>
         <Link
           href="/#cuisine"
-          className="text-green-600 group relative gap-2 w-fit flex items-center pb-2"
+          className="text-green-700 group relative gap-2 w-fit flex items-center pb-2"
         >
           <HoverLinkEffect />
           EXPLORER TOUS NOS RESTAURANTS <ArrowRight className="ml-2 h-4 w-4" />
@@ -105,7 +105,7 @@ export const BlogCuisine: React.FC = () => {
           </p>
           <Link
             href="/#cuisine"
-            className="text-green-600 group relative gap-2 w-fit flex items-center pb-2"
+            className="text-green-700 group relative gap-2 w-fit flex items-center pb-2"
           >
             <HoverLinkEffect />
             EN SAVOIR PLUS <ArrowRight className="ml-2 h-4 w-4" />
@@ -144,7 +144,7 @@ export const BlogCuisine: React.FC = () => {
               </p>
               <Link
                 href="/#cuisine"
-                className="text-green-600 group relative gap-2 w-fit flex items-center pb-2"
+                className="text-green-700 group relative gap-2 w-fit flex items-center pb-2"
               >
                 <HoverLinkEffect />
                 LIRE L&apos;ARTICLE <ArrowRight className="ml-2 h-4 w-4" />
