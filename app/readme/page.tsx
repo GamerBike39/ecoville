@@ -1,4 +1,11 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Écoville - README",
+  description:
+    "Page README du projet Écoville, la ville écologique qu'il faut vivre",
+};
 
 export default function ReadmePage() {
   return (
