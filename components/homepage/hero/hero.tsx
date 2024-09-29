@@ -105,7 +105,8 @@ const Hero: React.FC = () => {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           loading="eager"
-          priority
+          // d'après pageSpeed avec priority c'est classé comme LCP, why not ?
+          // priority
         />
       </div>
     </section>

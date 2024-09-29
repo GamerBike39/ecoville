@@ -67,7 +67,7 @@ export const Nav: React.FC = () => {
     <header className="relative z-50">
       <button
         onClick={toggleMenu}
-        className="fixed top-4 right-4 z-[101] px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors"
+        className="fixed top-4 right-4 z-[101] px-4 py-2 text-white font-bold bg-green-700 hover:bg-green-600 rounded-full  transition-colors"
       >
         {isOpen ? "Fermer" : "Menu"}
       </button>
