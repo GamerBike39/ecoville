@@ -166,7 +166,7 @@ export const BlogCuisine: React.FC = () => {
           disabled={isRightDisabled}
           aria-expanded={isRightDisabled}
           className={cn(
-            "max-lg:hidden absolute right-0 lg:-right-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500  p-2 rounded-full shadow-md hexa disabled:bg-gray-400 hover:scale-105 active:scale-95 transition-all"
+            "max-lg:hidden absolute right-0 lg:-right-14 top-1/2 transform -translate-y-1/2 bg-green-600 hover:bg-green-500  p-2 shadow-md hexa disabled:bg-gray-400 hover:scale-105 active:scale-95 transition-all"
           )}
         >
           <span className="sr-only">Voir les articles suivants</span>
